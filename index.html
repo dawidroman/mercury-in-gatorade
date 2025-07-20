@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Display</title>
+</head>
+<body>
+    <img id="photoDisplay" style="max-width: 100%; height: auto;" alt="Daily Photo">
+
+    <script>
+        // Get the current day of the month
+        const currentDay = new Date().getDate();
+        
+        // Define the photo URLs
+        const photo1 = "https://example.com/gator.png"; // Replace with your first photo URL
+        const photo2 = "https://example.com/mercury.png"; // Replace with your second photo URL
+        
+        // Select photo based on odd/even day
+        const selectedPhoto = currentDay % 2 === 0 ? photo2 : photo1;
+        
+        // Display the selected photo
+        document.getElementById('photoDisplay').src = selectedPhoto;
+    </script>
+</body>
+</html>
