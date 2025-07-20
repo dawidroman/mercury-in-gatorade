@@ -4,17 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 800px;
+            width: 90%;
+        }
+        #photoDisplay {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        #photoDisplay:hover {
+            transform: scale(1.02);
+        }
+    </style>
 </head>
 <body>
-    <img id="photoDisplay" style="max-width: 100%; height: auto;" alt="Daily Photo">
+    <div class="container">
+        <img id="photoDisplay" alt="Daily Photo">
 
     <script>
         // Get the current day of the month
         const currentDay = new Date().getDate();
         
         // Define the photo URLs
-        const photo1 = "https://ismercuryingatorade.net/gator.png"; // Replace with your first photo URL
-        const photo2 = "https://ismercuryingatorade.net/mercury.png"; // Replace with your second photo URL
+        const photo1 = "https://ismercuryingatorade.net/gator.png";
+        const photo2 = "https://ismercuryingatorade.net/mercury.png";
         
         // Select photo based on odd/even day
         const selectedPhoto = currentDay % 2 === 0 ? photo2 : photo1;
